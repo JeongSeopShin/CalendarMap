@@ -121,7 +121,7 @@ public class MonthCalendarFragment extends Fragment {
             @Override
             public View getView(int position, View convertView, ViewGroup parent){
                 View view = super.getView(position,convertView,parent);
-                // 각 칸의 색은 흰색으로 표현하였으며, 각 칸의 텍스트를 가운데로 정렬하였다.
+                // 각 칸의 색은 흰색으로 표현하였으며, 각 칸의 텍스트를 가운데로 정렬
                 View tv_cell = (View) view.findViewById(R.id.month_item);
                 //tv_cell.setBackgroundColor(Color.WHITE);
                 // 그리드뷰로 화면을 꽉 채우기 위해, 날짜를 출력할 TextView의 높이를 그리드뷰의 높이 / 6으로 설정
@@ -187,7 +187,7 @@ public class MonthCalendarFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() { // 일별칸에 스케줄이 없을때 클릭하고 플로팅버튼을 누르면 스케줄 액티비티로 이동
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "플로팅버튼클릭함ㅋ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "플로팅 버튼이 클릭되었습니다.", Toast.LENGTH_SHORT).show();
                 if(go) {
                     Intent intent = new Intent(getActivity(), schedule.class);
                     intent.putExtra("year", mParam1);
