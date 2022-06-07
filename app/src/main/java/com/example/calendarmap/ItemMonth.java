@@ -6,6 +6,7 @@ public class ItemMonth {
     String nDayNum; // text
     String nText1;
     String nText2;
+    
     ItemMonth(String aYear, String aMonth, String aDayNum, String aText1, String aText2) {
         nYear = aYear;
         nMonth = aMonth;
@@ -13,4 +14,5 @@ public class ItemMonth {
         nText1 = aText1;
         nText2 = aText2;
     }
+    
 }
