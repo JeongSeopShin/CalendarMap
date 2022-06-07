@@ -87,8 +87,6 @@ public class ItemMonthAdapter extends BaseAdapter {
 
         View view = (View) convertView.findViewById(R.id.month_item);
 
-
-
         return convertView;
     }
 
