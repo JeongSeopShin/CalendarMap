@@ -69,6 +69,7 @@ public class MonthCalendarFragment extends Fragment {
             mParam2 = getArguments().getInt(ARG_PARAM2);
         }
     }
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -90,7 +91,7 @@ public class MonthCalendarFragment extends Fragment {
         for (int i = 1; i < dayMax+1; i++){ // 최대 일 수만큼 dayList에 요소를 추가함
             Cursor cursor = mDbHelper.getDayUsersBySQL(String.valueOf(mParam1), String.valueOf(mParam2), String.valueOf(i));
             // 월별 달력에서 해당 일수마다 포인터를 이동시켜 데이터가 있으면 일별 칸에 스케줄 제목을 표시함
-            if(cursor.getCount()>1){ // 해당 일의 스케줄이 2개 이상히면 최대 2개까지만 표시함
+            if(cursor.getCount()>1){ // 해당 일의 스케줄이 2개 이상이면 최대 2개까지만 표시함
                 cursor.moveToNext();
                 String sche1 = cursor.getString(cursor.getColumnIndex(UserContract.Users.SCHEDULE_TITLE));
                 cursor.moveToNext();
@@ -127,7 +128,6 @@ public class MonthCalendarFragment extends Fragment {
                 // 그리드뷰로 화면을 꽉 채우기 위해, 날짜를 출력할 TextView의 높이를 그리드뷰의 높이 / 6으로 설정
                 tv_cell.getLayoutParams().height = gridview.getHeight()/6;
 
-                // Return the modified item
                 return tv_cell;
             }
         };
