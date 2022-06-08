@@ -17,11 +17,6 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MonthViewFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class WeekViewFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -37,14 +32,6 @@ public class WeekViewFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MonthViewFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static MonthViewFragment newInstance(String param1, String param2) {
         MonthViewFragment fragment = new MonthViewFragment();
@@ -67,6 +54,7 @@ public class WeekViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // 뷰페이저를 선언하여 프래그먼트에 연결시킴
         View rootView = inflater.inflate(R.layout.fragment_week_view, container, false);
 
         ViewPager2 vpPager = rootView.findViewById(R.id.vpPager2);
@@ -76,6 +64,8 @@ public class WeekViewFragment extends Fragment {
         vpPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
+                // 뷰페이저의 각 페이지별로 년도, 월을 달리하여 액션바에 표시함
+                // 모듈러를 사용하여 각각 year와 month를 표현아였음
                 int year = Calendar.getInstance().get(Calendar.YEAR);
                 int month = Calendar.getInstance().get(Calendar.MONTH)+1;
                 int dm = position*7/42;
