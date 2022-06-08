@@ -84,6 +84,7 @@ public class MonthViewFragment extends Fragment {
                 ab.setTitle((year+ym)+ "년 " + month + "월");
             }
         });
+        
         return rootView;
     }
 }
