@@ -65,7 +65,7 @@ public class WeekViewFragment extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 // 뷰페이저의 각 페이지별로 년도, 월을 달리하여 액션바에 표시함
-                // 모듈러를 사용하여 각각 year와 month를 표현아였음
+                // 모듈러를 사용하여 각각 year와 month를 표현하였음
                 int year = Calendar.getInstance().get(Calendar.YEAR);
                 int month = Calendar.getInstance().get(Calendar.MONTH)+1;
                 int dm = position*7/42;
