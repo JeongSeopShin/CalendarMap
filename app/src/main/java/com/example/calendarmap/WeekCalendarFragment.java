@@ -115,8 +115,6 @@ public class WeekCalendarFragment extends Fragment {
             }
         }
 
-        // 해당 달의 최대 일 수를 구하기 위해 .getActualMaximum(Calendar.DAY_OF_MONTH) 함수를 사용
-
         ArrayAdapter<String> adapt
                 = new ArrayAdapter<String>(
                 getActivity(),
@@ -155,7 +153,7 @@ public class WeekCalendarFragment extends Fragment {
         listview.setAdapter(adapt2);
         for(int i=0; i<24; i++){
             for(int j=0; j<7; j++) {
-                //해당 요일의 시간칸별로 SQL포인터를 이동시켜서 스케줄이 있으면 칸에 표시함
+                // 해당 요일의 시간칸별로 반복문을 사용해 SQL포인터를 이동시켜, 스케줄이 있으면 칸에 표시함
                 Cursor cursor = mDbHelper.getHourUsersBySQL(String.valueOf(year), String.valueOf(month), String.valueOf(dayList.get(j)), String.valueOf(i));
                 if (cursor.moveToNext()){
                     voidcell.add(cursor.getString(cursor.getColumnIndex(UserContract.Users.SCHEDULE_TITLE)));
