@@ -183,6 +183,8 @@ public class MonthCalendarFragment extends Fragment {
                 }
             }
         });
+        
+        // 플로팅 버튼 부분
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() { // 일별칸에 스케줄이 없을때 클릭하고 플로팅버튼을 누르면 스케줄 액티비티로 이동
             @Override
@@ -194,7 +196,6 @@ public class MonthCalendarFragment extends Fragment {
                     intent.putExtra("month", mParam2);
                     intent.putExtra("day", day);
                     startActivity(intent);
-
                 }
             }
         });
