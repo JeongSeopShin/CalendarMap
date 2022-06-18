@@ -1,12 +1,14 @@
 package com.example.calendarmap;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.AbstractCursor;
@@ -88,13 +90,25 @@ public class schedule extends AppCompatActivity implements OnMapReadyCallback {
                 insertRecord();
             }
         }); // 저장 버튼 클릭 시 현재 액티비티에 적힌 데이터를 SQL에 저장
+
+        //삭제시 다이얼 로그 구현
+        AlertDialog.Builder dlg = new AlertDialog.Builder(schedule.this);
+        dlg.setMessage("정말 삭제하시겠습니까?");
+        dlg.setNegativeButton("삭제", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                deleteRecord();
+            }
+        });
+        dlg.setPositiveButton("취소",null);
+
         Button remove = (Button)findViewById(R.id.remove);
         remove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deleteRecord();
+                dlg.show();
             }
-        }); // 삭제 버튼 클릭 시 현재 SQL에 저장된 데이터를 삭제
+        });
         Button cancel = (Button)findViewById(R.id.cancel);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
