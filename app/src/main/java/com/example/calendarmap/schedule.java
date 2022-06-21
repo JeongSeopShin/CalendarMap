@@ -169,6 +169,10 @@ public class schedule extends AppCompatActivity implements OnMapReadyCallback {
 
         finish();
 
+        // refresh 기능 추가
+        Intent refresh = new Intent(this, MainActivity.class);
+        startActivity(refresh);
+
     }
 
     private void deleteRecord() { // 삭제 버튼을 누르면 해당 데이터에 적힌 데이터를 SQL에서 삭제
@@ -183,6 +187,10 @@ public class schedule extends AppCompatActivity implements OnMapReadyCallback {
         else
             Toast.makeText(this,"No Record Deleted", Toast.LENGTH_SHORT).show();
         finish();
+
+        // refresh 기능 추가
+        Intent refresh = new Intent(this, MainActivity.class);
+        startActivity(refresh);
     }
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void setting(){ // 액티비티가 호출되었을 때 이전 프래그먼트에서 전달받은 데이터를 토대로 데이터를 화면에 표시함
