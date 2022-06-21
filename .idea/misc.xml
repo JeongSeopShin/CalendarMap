@@ -12,6 +12,9 @@
         <entry key="..\:/Android/CalendarMap/app/src/main/res/layout/item_month.xml" value="0.1" />
         <entry key="..\:/Android/CalendarMap/app/src/main/res/layout/item_week.xml" value="0.1" />
         <entry key="..\:/Android/CalendarMap/app/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_schedule.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_month_calendar.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_month_view.xml" value="0.1" />
       </map>
     </option>
   </component>

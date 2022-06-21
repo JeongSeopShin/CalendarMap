@@ -86,7 +86,6 @@ public class ItemMonthAdapter extends BaseAdapter {
             text2.setBackgroundColor(Color.CYAN); // 월별 달력에서 표시되는 두번째 스케줄칸의 배경을 시안색으로 설정
 
         View view = (View) convertView.findViewById(R.id.month_item);
-
         return convertView;
     }
 
